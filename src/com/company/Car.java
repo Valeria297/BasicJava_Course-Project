@@ -1,57 +1,71 @@
 package com.company;
 
-public class Car {
-    String mark;
-    String colour;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
-    public void changeColour(String mark, String colour) {
-        if (mark == "Audi" && colour == "Blue") {
-            colour = "Red";
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-            return;
-        } else if (mark == "Audi" && colour == "Red"){
-            colour = "Green";
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-            return;
-        } else if (mark == "Audi" && colour == "Green"){
-            colour = "Blue";
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-            return;
-        } else {
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-        }
+public abstract class Car {
+    protected String colour;
+    protected String model;
+    protected int yearOfRelease;
+    protected int wheelSize;
+    protected int engineVolume;
+    ArrayList<String> options = new ArrayList<>(100);
 
-        if (mark == "BMW" && colour == "Orange") {
-            colour = "Black";
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-            return;
-        } else if (mark == "BMW" && colour == "Black"){
-            colour = "Purple";
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-            return;
-        } else if (mark == "BMW" && colour == "Purple"){
-            colour = "Orange";
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-            return;
-        } else {
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-        }
+    Car() {
 
-        if (mark == "KIA" && colour == "Yellow") {
-            colour = "Grey";
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-            return;
-        } else if (mark == "KIA" && colour == "Grey"){
-            colour = "White";
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-            return;
-        } else if (mark == "KIA" && colour == "White"){
-            colour = "Yellow";
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
-            return;
-        } else {
-            System.out.println("Mark is: " + mark + "; Colour is: " + colour);
+    }
+
+    Car(String color, String model, int yearOfRelease, int wheelSize, int engineVolume) {
+        this.model = model;
+        this.yearOfRelease = yearOfRelease;
+        this.engineVolume = engineVolume;
+        this.colour = colour;
+        this.wheelSize = wheelSize;
+    }
+
+    public void getCar() {
+        this.colour = colour;
+        this.wheelSize = wheelSize;
+
+        System.out.println("Congratulate! You make offer on car: \r\n"
+                + colour + " " + model + " " + yearOfRelease + " with wheel size " + wheelSize
+                + " sm and engine volume " + engineVolume + " l.");
+    }
+
+    public void changeColour(String colour) {
+        this.colour = colour;
+    }
+
+    public void changeWheelSize(int wheelSize) {
+        this.wheelSize = wheelSize;
+    }
+
+    public void options() {
+        options.add("Move");
+        options.add("Bip-Bip");
+        options.add("Stop moving");
+        options.add("Buy");
+        System.out.println("Options: " + options);
+    }
+
+    public String getOptions() {
+        return options.toString();
+    }
+
+    public void addOption(String str) {
+        options.add(str);
+    }
+
+    public void deleteOption(String str1) {
+        System.out.println(options);
+        String element = " ";
+        for (String ce : options) {
+            if (ce.equals(str1)) {
+                element = str1;
+            }
         }
+        options.remove(element);
 
     }
 }
