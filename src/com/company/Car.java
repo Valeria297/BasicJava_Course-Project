@@ -8,15 +8,15 @@ public abstract class Car {
     protected String colour;
     protected String model;
     protected int yearOfRelease;
-    protected int wheelSize;
+    protected WheelSize wheelSize;
     protected int engineVolume;
     ArrayList<String> options = new ArrayList<>(100);
 
-    Car() {
+    Car(){
 
     }
 
-    Car(String color, String model, int yearOfRelease, int wheelSize, int engineVolume) {
+    Car(String color, String model, int yearOfRelease, int engineVolume, WheelSize wheelSize) {
         this.model = model;
         this.yearOfRelease = yearOfRelease;
         this.engineVolume = engineVolume;
@@ -28,29 +28,30 @@ public abstract class Car {
         this.colour = colour;
         this.wheelSize = wheelSize;
 
-        System.out.println("Congratulate! You make offer on car: \r\n"
+        System.out.println("Congratulate! You make a car: \r\n"
                 + colour + " " + model + " " + yearOfRelease + " with wheel size " + wheelSize
-                + " sm and engine volume " + engineVolume + " l.");
+                + " and engine volume " + engineVolume + " l.");
+    }
+
+
+    public void getWheelSize() {
+        System.out.println(Arrays.toString(WheelSize.values()));
     }
 
     public void changeColour(String colour) {
         this.colour = colour;
     }
 
-    public void changeWheelSize(int wheelSize) {
-        this.wheelSize = wheelSize;
+    public void changeWheelSize(WheelSize wheelSize) {
+        for (int i = 0; i < WheelSize.values().length; i++) {
+            if (this.wheelSize != WheelSize.values()[i]) {
+                this.wheelSize = wheelSize;
+            }
+        }
     }
 
     public void options() {
-        options.add("Move");
-        options.add("Bip-Bip");
-        options.add("Stop moving");
-        options.add("Buy");
         System.out.println("Options: " + options);
-    }
-
-    public String getOptions() {
-        return options.toString();
     }
 
     public void addOption(String str) {
@@ -58,7 +59,6 @@ public abstract class Car {
     }
 
     public void deleteOption(String str1) {
-        System.out.println(options);
         String element = " ";
         for (String ce : options) {
             if (ce.equals(str1)) {
@@ -66,6 +66,5 @@ public abstract class Car {
             }
         }
         options.remove(element);
-
     }
 }

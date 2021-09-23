@@ -6,11 +6,14 @@ public class JeepCar extends Car{
     protected String colour;
     final protected String model = "Jeep Wrangler";
     final protected int yearOfRelease = 2021;
-    protected int wheelSize;
+    protected WheelSize wheelSize;
     final protected int engineVolume = 4;
 
+    JeepCar(){
 
-    JeepCar(String color, String model, int yearOfRelease, int wheelSize, int engineVolume) {
-        super(color,model,yearOfRelease,wheelSize,engineVolume);
+    }
+
+    JeepCar(String color, String model, int yearOfRelease, int engineVolume, WheelSize wheelSize) {
+        super(color, model, yearOfRelease, engineVolume, wheelSize);
     }
 }
