@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Factory {
     protected String[] models = {"Jeep", "BMW", "Jaguar"};
-    protected int[] engineVolume = {3, 4, 5};
+    protected String [] engineVolume = {"XX3", "XX4", "XX5"};
     protected String[] carColours = {"Black", "White", "Red", "Purple", "Yellow", "Grey", "Blue", "Green", "Orange"};
     protected String[] wheelSize = {"X50", "X60", "X70"};
 

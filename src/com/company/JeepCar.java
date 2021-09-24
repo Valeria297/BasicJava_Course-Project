@@ -4,16 +4,21 @@ import java.util.ArrayList;
 
 public class JeepCar extends Car{
     protected String colour;
-    final protected String model = "Jeep Wrangler";
-    final protected int yearOfRelease = 2021;
+    protected Models model;
+    protected int yearOfRelease = 2021;
     protected WheelSize wheelSize;
-    final protected int engineVolume = 4;
+    protected EngineVolumes engineVolume;
 
     JeepCar(){
 
     }
 
-    JeepCar(String color, String model, int yearOfRelease, int engineVolume, WheelSize wheelSize) {
+    JeepCar(String color, Models model, int yearOfRelease, EngineVolumes engineVolume, WheelSize wheelSize) {
+
         super(color, model, yearOfRelease, engineVolume, wheelSize);
+
+        if (this.yearOfRelease < 2000 && this.yearOfRelease > 2022){
+            System.out.println("Please, input the correct data");
+        }
     }
 }

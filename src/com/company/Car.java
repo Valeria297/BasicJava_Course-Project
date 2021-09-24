@@ -6,17 +6,17 @@ import java.util.Iterator;
 
 public abstract class Car {
     protected String colour;
-    protected String model;
+    protected Models model;
     protected int yearOfRelease;
     protected WheelSize wheelSize;
-    protected int engineVolume;
+    protected EngineVolumes engineVolume;
     ArrayList<String> options = new ArrayList<>(100);
 
     Car(){
 
     }
 
-    Car(String color, String model, int yearOfRelease, int engineVolume, WheelSize wheelSize) {
+    Car(String color, Models model, int yearOfRelease, EngineVolumes engineVolume, WheelSize wheelSize) {
         this.model = model;
         this.yearOfRelease = yearOfRelease;
         this.engineVolume = engineVolume;

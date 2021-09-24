@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Storage {
     protected String colour;
-    protected String model;
+    protected Models model;
     protected int yearOfRelease;
     protected WheelSize wheelSize;
-    protected int engineVolume;
+    protected EngineVolumes engineVolume;
     ArrayList<Object> storage = new ArrayList<>(100);
 
     public void storage() {

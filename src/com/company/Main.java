@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        Car car = new JeepCar("White", "Jeep Wrangler", 2021, 5, WheelSize.X50 );
+        Car car = new JeepCar("White", Models.JEEP, 2021, EngineVolumes.XX5, WheelSize.X50 );
         car.changeColour("Black");
         car.changeWheelSize(WheelSize.X70);
         car.getCar();
@@ -18,5 +18,7 @@ public class Main {
         car.addOption("Buy");
         car.deleteOption("Move");
         car.options();
+
+
     }
 }

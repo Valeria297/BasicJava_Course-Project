@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class CarBMW extends Car{
     protected String colour;
-    final protected String model = "BMW X6";
+    protected Models model;
     final protected int yearOfRelease = 2021;
     protected WheelSize wheelSize;
-    final protected int engineVolume = 3;
+    protected EngineVolumes engineVolume;
 
     CarBMW(){
 
     }
 
-    CarBMW(String color, String model, int yearOfRelease, int engineVolume, WheelSize wheelSize) {
+    CarBMW(String color, Models model, int yearOfRelease, EngineVolumes engineVolume, WheelSize wheelSize) {
         super(color, model, yearOfRelease, engineVolume, wheelSize);
     }
 }
