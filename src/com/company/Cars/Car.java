@@ -1,16 +1,19 @@
-package com.company;
+package com.company.Cars;
+
+import com.company.Enums.EngineVolumes;
+import com.company.Enums.Models;
+import com.company.Enums.WheelSize;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 
-public abstract class Car {
+public class Car {
     protected String colour;
     protected Models model;
-    protected int yearOfRelease;
+    protected final int yearOfRelease = 2021;
     protected WheelSize wheelSize;
     protected EngineVolumes engineVolume;
-    ArrayList<String> options = new ArrayList<>(100);
+    ArrayList<String> options = new ArrayList<>();
 
     Car(){
 
@@ -18,7 +21,6 @@ public abstract class Car {
 
     Car(String color, Models model, int yearOfRelease, EngineVolumes engineVolume, WheelSize wheelSize) {
         this.model = model;
-        this.yearOfRelease = yearOfRelease;
         this.engineVolume = engineVolume;
         this.colour = colour;
         this.wheelSize = wheelSize;

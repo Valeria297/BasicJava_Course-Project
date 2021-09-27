@@ -1,26 +1,29 @@
 package com.company;
 
+import com.company.Cars.Car;
+
 import java.util.ArrayList;
 
 public class Service {
     protected boolean wheelIsDamage = false;
     protected String colour;
-    ArrayList<String> optionsService = new ArrayList<>(100);
+    ArrayList<String> optionsService = new ArrayList<>();
 
-    public void changeTheWheel (boolean wheelIsDamage){
-        if (wheelIsDamage == true){
+
+    public void changeTheWheel(boolean wheelIsDamage) {
+        if (wheelIsDamage == true) {
             System.out.println("The wheels is changed.");
         } else {
             System.out.println("No wheel replacement is required.");
         }
     }
 
-    public void changeColour(String colour) {
+    public void newColour(Car car, String colour) {
         this.colour = colour;
+        car.changeColour(colour);
     }
 
-
-    public void optionsService () {
+    public void optionsService() {
         System.out.println("Options: " + optionsService);
     }
 
