@@ -7,7 +7,7 @@ import com.company.Enums.WheelSize;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Car {
+public abstract class Car {
     protected String colour;
     protected Models model;
     protected final int yearOfRelease = 2021;

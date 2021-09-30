@@ -6,6 +6,7 @@ import com.company.Cars.JaguarCar;
 import com.company.Cars.JeepCar;
 import com.company.Enums.WheelSize;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Factory {
@@ -19,13 +20,17 @@ public class Factory {
     protected final int yearOfRelease = 2021;
     protected WheelSize wheelSize;
     protected int engineVolume;
+    protected Storage storage = new Storage();
 
     public void makeCarBMW(String colour, String model, int yearOfRelease, WheelSize whileSize, int engineVolume) {
         Car car = new CarBMW();
         this.colour = colour;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
-        Storage storage = new Storage();
+
+        if (storage.containsCar(car)){
+            storage.containsCar(car);
+        }
         storage.addStorage(car);
     }
     public void makeCarJeep(String colour, String model, int yearOfRelease, WheelSize whileSize, int engineVolume) {
@@ -33,7 +38,10 @@ public class Factory {
         this.colour = colour;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
-        Storage storage = new Storage();
+
+        if (storage.containsCar(car)){
+           storage.containsCar(car);
+        }
         storage.addStorage(car);
     }
     public void makeCarJaguar(String colour, String model, int yearOfRelease, WheelSize whileSize, int engineVolume) {
@@ -41,7 +49,10 @@ public class Factory {
         this.colour = colour;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
-        Storage storage = new Storage();
+
+        if ( storage.containsCar(car)){
+            storage.containsCar(car);
+        }
         storage.addStorage(car);
     }
 
