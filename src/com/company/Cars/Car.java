@@ -66,7 +66,7 @@ public abstract class Car {
         return false;
     }
 
-    public boolean compareCars(Car car1, Car car) {
+    public boolean compareCars(Car car1, Object car) {
         if (car1.equals(car)){
                return true;
         }

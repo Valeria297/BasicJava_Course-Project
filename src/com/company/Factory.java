@@ -19,14 +19,15 @@ public class Factory {
     protected WheelSize wheelSize;
     protected EngineVolumes engineVolume;
     protected Storage storage = new Storage();
-    protected ArrayList<Object> storage1 = new ArrayList<>();
+    private Object ArrayList;
+
 
     public void makeCarBMW(Colours colour, Models model, int yearOfRelease, WheelSize whileSize, EngineVolumes engineVolume) {
         Car car = new CarBMW();
         this.colour = colour;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
-
+        storage.checkCar(car);
     }
 
     public void makeCarJaguar(Colours colour, Models model, int yearOfRelease, WheelSize whileSize, EngineVolumes engineVolume) {
@@ -34,6 +35,7 @@ public class Factory {
         this.colour = colour;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
+        storage.checkCar(car);
     }
 
     public void makeCarJeep(Colours colour, Models model, int yearOfRelease, WheelSize whileSize, EngineVolumes engineVolume) {
@@ -41,7 +43,7 @@ public class Factory {
         this.colour = colour;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
-
+        storage.checkCar(car);
     }
 
     public void getAllModels() {
