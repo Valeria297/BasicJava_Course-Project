@@ -1,12 +1,13 @@
 package com.company;
 
 import com.company.Cars.Car;
+import com.company.Enums.Colours;
 
 import java.util.ArrayList;
 
 public class Service {
     protected boolean wheelIsDamage = false;
-    protected String colour;
+    protected Colours colour;
     ArrayList<String> optionsService = new ArrayList<>();
 
 
@@ -18,7 +19,7 @@ public class Service {
         }
     }
 
-    public void newColour(Car car, String colour) {
+    public void newColour(Car car, Colours colour) {
         this.colour = colour;
         car.changeColour(colour);
     }

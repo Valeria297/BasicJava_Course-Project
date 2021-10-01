@@ -1,21 +1,24 @@
 package com.company;
 
+import com.company.Enums.Colours;
+import com.company.Enums.EngineVolumes;
+import com.company.Enums.Models;
 import com.company.Enums.WheelSize;
 
 public class CarStore {
-    protected String colour;
-    protected String model;
+    protected Colours colour;
+    protected Models model;
     protected int yearOfRelease;
     protected WheelSize wheelSize;
-    protected int engineVolume;
+    protected EngineVolumes engineVolume;
     protected Factory factory = new Factory();
 
-    public void makeOffer(String colour, String model, int yearOfRelease, WheelSize whileSize, int engineVolume) {
-        if (this.model == "Jeep" || this.model == "JEEP") {
+    public void makeOffer(Colours colour, Models model, int yearOfRelease, WheelSize whileSize, EngineVolumes engineVolume) {
+        if (this.model == Models.JEEP) {
             factory.makeCarJeep(this.colour, this.model, this.yearOfRelease, this.wheelSize, this.engineVolume);
-        } else if (this.model == "Jaguar" || this.model == "JAGUAR") {
+        } else if (this.model == Models.JAGUAR) {
             factory.makeCarJaguar(this.colour, this.model, this.yearOfRelease, this.wheelSize, this.engineVolume);
-        } else if (this.model == "BMW") {
+        } else if (this.model == Models.BMW) {
             factory.makeCarBMW(this.colour, this.model, this.yearOfRelease, this.wheelSize, this.engineVolume);
         }
 

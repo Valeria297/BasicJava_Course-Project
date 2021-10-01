@@ -3,6 +3,7 @@ package com.company;
 
 import com.company.Cars.Car;
 import com.company.Cars.JeepCar;
+import com.company.Enums.Colours;
 import com.company.Enums.EngineVolumes;
 import com.company.Enums.Models;
 import com.company.Enums.WheelSize;
@@ -10,11 +11,11 @@ import com.company.Enums.WheelSize;
 public class Main {
 
     public static void main(String[] args) {
-        Car car = new JeepCar("White", Models.JEEP, 2021, EngineVolumes.XX5, WheelSize.X50 );
-        car.changeColour("Black");
-        car.changeWheelSize(WheelSize.X70);
+        Car car = new JeepCar(Colours.BLUE, Models.JEEP, 2021, EngineVolumes.JE7, WheelSize.YJ50 );
+        car.changeColour(Colours.BLACK);
+        car.changeWheelSize(WheelSize.YJ70);
         Service service = new Service();
-        service.newColour(car,"Orange");
+        service.newColour(car,Colours.ORANGE);
         car.getCar();
 
         car.addOption("Change the wheels");

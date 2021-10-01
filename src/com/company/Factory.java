@@ -4,72 +4,76 @@ import com.company.Cars.Car;
 import com.company.Cars.CarBMW;
 import com.company.Cars.JaguarCar;
 import com.company.Cars.JeepCar;
+import com.company.Enums.Colours;
+import com.company.Enums.EngineVolumes;
+import com.company.Enums.Models;
 import com.company.Enums.WheelSize;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Factory {
-
-    protected String[] modelsAll = {"Jeep", "BMW", "Jaguar"};
-    protected String[] engineVolumeAll = {"XX3", "XX4", "XX5"};
-    protected String[] carColoursAll = {"Black", "White", "Red", "Purple", "Yellow", "Grey", "Blue", "Green", "Orange"};
-    protected String[] wheelSizeAll = {"X50", "X60", "X70"};
-    protected String colour;
-    protected final String model = "BMW";
+    protected Colours colour;
+    protected Models model;
     protected final int yearOfRelease = 2021;
     protected WheelSize wheelSize;
-    protected int engineVolume;
+    protected EngineVolumes engineVolume;
     protected Storage storage = new Storage();
+    protected ArrayList<Object> storage1 = new ArrayList<>();
 
-    public void makeCarBMW(String colour, String model, int yearOfRelease, WheelSize whileSize, int engineVolume) {
+    public void makeCarBMW(Colours colour, Models model, int yearOfRelease, WheelSize whileSize, EngineVolumes engineVolume) {
         Car car = new CarBMW();
         this.colour = colour;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
 
-        if (storage.containsCar(car)){
-            storage.containsCar(car);
-        }
-        storage.addStorage(car);
     }
-    public void makeCarJeep(String colour, String model, int yearOfRelease, WheelSize whileSize, int engineVolume) {
+
+    public void makeCarJaguar(Colours colour, Models model, int yearOfRelease, WheelSize whileSize, EngineVolumes engineVolume) {
+        Car car = new JaguarCar();
+        this.colour = colour;
+        this.wheelSize = wheelSize;
+        this.engineVolume = engineVolume;
+    }
+
+    public void makeCarJeep(Colours colour, Models model, int yearOfRelease, WheelSize whileSize, EngineVolumes engineVolume) {
         Car car = new JeepCar();
         this.colour = colour;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
 
-        if (storage.containsCar(car)){
-           storage.containsCar(car);
-        }
-        storage.addStorage(car);
-    }
-    public void makeCarJaguar(String colour, String model, int yearOfRelease, WheelSize whileSize, int engineVolume) {
-        Car car = new JaguarCar();
-        this.colour = colour;
-        this.wheelSize = wheelSize;
-        this.engineVolume = engineVolume;
-
-        if ( storage.containsCar(car)){
-            storage.containsCar(car);
-        }
-        storage.addStorage(car);
     }
 
     public void getAllModels() {
-        System.out.println(Arrays.toString(modelsAll));
+       model.getAllModels();
     }
 
-    public void getEngineVolumes() {
-        System.out.println(Arrays.toString(engineVolumeAll));
+    public void getEngineVolumesJeep() {
+        engineVolume.getEngineVolumes(Models.JEEP);
+    }
+
+    public void getEngineVolumesBMW() {
+        engineVolume.getEngineVolumes(Models.BMW);
+    }
+
+    public void getEngineVolumesJaguar() {
+        engineVolume.getEngineVolumes(Models.JAGUAR);
     }
 
     public void getAllCarColours() {
-        System.out.println(Arrays.toString(carColoursAll));
+       colour.getColours();
     }
 
-    public void getWheelSizes() {
-        System.out.println(Arrays.toString(wheelSizeAll));
+    public void getWheelSizesJeep() {
+        wheelSize.getWheelSize(Models.JEEP);
+    }
+
+    public void getWheelSizesBMW() {
+        wheelSize.getWheelSize(Models.BMW);
+    }
+
+    public void getWheelSizesJaguar() {
+        wheelSize.getWheelSize(Models.JAGUAR);
     }
 
 

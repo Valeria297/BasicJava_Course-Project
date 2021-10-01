@@ -1,25 +1,26 @@
 package com.company.Cars;
 
+import com.company.Enums.*;
 import com.company.Enums.EngineVolumes;
-import com.company.Enums.Models;
-import com.company.Enums.WheelSize;
+import com.company.Storage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public abstract class Car {
-    protected String colour;
+    protected Colours colour;
     protected Models model;
     protected final int yearOfRelease = 2021;
     protected WheelSize wheelSize;
     protected EngineVolumes engineVolume;
     ArrayList<String> options = new ArrayList<>();
+    Storage storage = new Storage();
 
-    Car(){
+    Car() {
 
     }
 
-    Car(String color, Models model, int yearOfRelease, EngineVolumes engineVolume, WheelSize wheelSize) {
+    Car(Colours colour, Models model, int yearOfRelease, EngineVolumes engineVolume, WheelSize wheelSize) {
         this.model = model;
         this.engineVolume = engineVolume;
         this.colour = colour;
@@ -40,7 +41,7 @@ public abstract class Car {
         System.out.println(Arrays.toString(WheelSize.values()));
     }
 
-    public void changeColour(String colour) {
+    public void changeColour(Colours colour) {
         this.colour = colour;
     }
 
@@ -50,6 +51,26 @@ public abstract class Car {
                 this.wheelSize = wheelSize;
             }
         }
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Car)) {
+            return false;
+        }
+        Car tempCar = (Car) obj;
+        if (tempCar.model.equals(this.model) && tempCar.engineVolume.equals(this.engineVolume)) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean compareCars(Car car1, Car car) {
+        if (car1.equals(car)){
+               return true;
+        }
+        return false;
     }
 
     public void options() {
