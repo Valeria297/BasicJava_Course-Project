@@ -7,7 +7,7 @@ import com.company.Enums.WheelSize;
 
 public class CarBMW extends Car {
 
-    public CarBMW(){
+    public CarBMW() {
 
     }
 

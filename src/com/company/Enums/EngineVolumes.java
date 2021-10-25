@@ -1,6 +1,6 @@
 package com.company.Enums;
 
-public enum EngineVolumes{
+public enum EngineVolumes {
     XX3(Models.BMW),
     XX4(Models.BMW),
     XX5(Models.BMW),
@@ -28,4 +28,5 @@ public enum EngineVolumes{
         }
         return engineVolumes;
     }
+
 }

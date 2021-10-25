@@ -17,4 +17,5 @@ public enum Colours {
     public void getColours(){
         System.out.println(Arrays.toString(Colours.values()));
     }
+
 }

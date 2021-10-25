@@ -10,4 +10,5 @@ public enum Models {
     public void getAllModels() {
         System.out.println(Arrays.toString(Models.values()));
     }
+
 }

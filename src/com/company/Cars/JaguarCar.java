@@ -7,11 +7,12 @@ import com.company.Enums.WheelSize;
 
 public class JaguarCar extends Car {
 
-    public JaguarCar (){
+    public JaguarCar() {
 
     }
 
     JaguarCar(Colours colour, Models model, int yearOfRelease, EngineVolumes engineVolume, WheelSize wheelSize) {
         super(colour, model, yearOfRelease, engineVolume, wheelSize);
     }
+
 }
