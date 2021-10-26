@@ -48,12 +48,19 @@ public abstract class Car {
 
     public void changeWheelSize(WheelSize wheelSize) {
         for (int i = 0; i < WheelSize.values().length; i++) {
-            if (this.wheelSize != WheelSize.values()[i]) {
+            if (this.wheelSize == WheelSize.values()[i]) {
                 this.wheelSize = wheelSize;
             }
         }
     }
 
+    public void changeEngineVolume(EngineVolumes engineVolume) {
+        for (int i = 0; i < EngineVolumes.values().length; i++) {
+            if (this.engineVolume == EngineVolumes.values()[i]) {
+                this.engineVolume = engineVolume;
+            }
+        }
+    }
 
     @Override
     public boolean equals(Object obj) {

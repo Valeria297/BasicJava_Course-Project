@@ -6,16 +6,21 @@ import com.company.Enums.Colours;
 import com.company.Enums.EngineVolumes;
 import com.company.Enums.Models;
 import com.company.Enums.WheelSize;
-import com.company.Storage;
 
 public class FactoryBMW extends Factory {
 
-    public void makeCarBMW(Colours colour, Models model, int yearOfRelease, WheelSize whileSize, EngineVolumes engineVolume) {
+    public Object makeCarBMW(Colours colour, Models model, int yearOfRelease, WheelSize whileSize, EngineVolumes engineVolume) {
         Car car = new CarBMW();
-        this.colour = colour;
-        this.wheelSize = wheelSize;
-        this.engineVolume = engineVolume;
-        storage.checkCar(car);
+
+        if (storage.checkCar(car).equals(false)) {
+            this.colour = colour;
+            this.wheelSize = wheelSize;
+            this.engineVolume = engineVolume;
+            return car;
+        } else {
+            car = (Car) storage.checkCar(car);
+            return false;
+        }
     }
 
     protected void getEngineVolumesBMW() {
